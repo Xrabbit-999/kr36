@@ -3,12 +3,14 @@ import scrapy
 import json
 import re
 from kr36.items import Kr36Item
+from scrapy_redis.spiders import RedisSpider
 
 
-class K36Spider(scrapy.Spider):
+class K36Spider(RedisSpider):
     name = 'k36'
     allowed_domains = ['36kr.com']
-    start_urls = ['https://36kr.com/information/web_news']
+    # start_urls = ['https://36kr.com/information/web_news']
+    redis_key = "36kr:start_urls"
 
     def parse(self, response):
         first_id = response.xpath('//div[@class="kr-loading-more"]/div[@class="information-flow-list"]/div[1]/div[1]/@class').extract_first()
