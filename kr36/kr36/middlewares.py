@@ -119,7 +119,7 @@ class UserAgentDownloadMiddleware(object):
 
 class IPProxyDownloadMiddleware(object):
     proxy_server = "http://http-cla.abuyun.com:9030"
-    proxy_user = "H50LW4EJ463B57UC"
+    proxy_user = "HGJXN75S1F6969LC"
     proxy_pass = "E89313E21F401733"
     proxy_auth = "Basic " + base64.urlsafe_b64encode(bytes((proxy_user + ":" + proxy_pass), "ascii")).decode("utf8")
 
